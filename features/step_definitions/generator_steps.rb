@@ -54,6 +54,10 @@ Given /^I set JEWELER_OPTS env variable to "(.*)"$/ do |val|
   ENV['JEWELER_OPTS'] = val
 end
 
+Given /^the year is '(.*)'$/ do |year|
+  Time.any_instance.stubs(:year).returns(year)
+end
+
 When /^I generate a (.*)project named '((?:\w|-|_)+)' that is '([^']*)'$/ do |testing_framework, name, summary|
   When "I generate a #{testing_framework}project named '#{name}' that is '#{summary}' and described as ''"
 end

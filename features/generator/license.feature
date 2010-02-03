@@ -6,6 +6,7 @@ Feature: generated license
   Scenario: copyright
     Given a working directory
     And I have configured git sanely
+    And the year is '1969'
     When I generate a project named 'the-perfect-gem' that is 'zomg, so good'
 
-    Then LICENSE has the copyright as belonging to 'foo' in '2009'
+    Then LICENSE has the copyright as belonging to 'foo' in '1969'
